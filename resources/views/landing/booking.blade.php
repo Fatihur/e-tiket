@@ -11,15 +11,15 @@
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <style>
         :root {
-            --primary-color: #00B4D8;
-            --secondary-color: #0077B6;
-            --accent-color: #90E0EF;
-            --dark-color: #023E8A;
-            --light-color: #CAF0F8;
-            --text-dark: #03045E;
-            --text-light: #6c757d;
-            --success-color: #28a745;
-            --danger-color: #dc3545;
+            --primary-color: #2563eb;
+            --secondary-color: #0ea5e9;
+            --accent-color: #dbeafe;
+            --dark-color: #0f172a;
+            --light-color: #eff6ff;
+            --text-dark: #0f172a;
+            --text-light: #475569;
+            --success-color: #22c55e;
+            --danger-color: #ef4444;
         }
         
         * {
@@ -31,10 +31,14 @@
         body {
             font-family: 'Poppins', sans-serif;
             color: var(--text-dark);
-            background: linear-gradient(135deg, #f8f9fa 0%, var(--light-color) 100%);
+            background: radial-gradient(circle at top, rgba(37, 99, 235, 0.12), transparent 55%), linear-gradient(180deg, #f8fafc 0%, #e0e7ff 100%);
             min-height: 100vh;
         }
         
+        main {
+            padding: 4rem 0 3rem;
+        }
+
         .container {
             max-width: 900px;
         }
@@ -66,8 +70,8 @@
         .progress-wrapper {
             background: white;
             padding: 2rem;
-            border-radius: 20px;
-            box-shadow: 0 5px 25px rgba(0, 0, 0, 0.08);
+            border-radius: 24px;
+            box-shadow: 0 25px 55px rgba(15, 23, 42, 0.08);
             margin-bottom: 2rem;
         }
         
@@ -128,7 +132,7 @@
             border-color: var(--primary-color);
             color: white;
             transform: scale(1.1);
-            box-shadow: 0 5px 15px rgba(0, 180, 216, 0.3);
+            box-shadow: 0 10px 20px rgba(37, 99, 235, 0.25);
         }
         
         .step.completed .step-circle {
@@ -160,8 +164,8 @@
             border-radius: 20px;
             padding: 1.5rem;
             margin-bottom: 2rem;
-            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
-            border-left: 5px solid var(--primary-color);
+            box-shadow: 0 25px 55px rgba(15, 23, 42, 0.12);
+            border-left: 5px solid rgba(37, 99, 235, 0.35);
         }
         
         .package-summary h5 {
@@ -179,9 +183,9 @@
         /* Form Card */
         .form-card {
             background: white;
-            border-radius: 20px;
+            border-radius: 24px;
             padding: 2.5rem;
-            box-shadow: 0 5px 25px rgba(0, 0, 0, 0.08);
+            box-shadow: 0 30px 65px rgba(15, 23, 42, 0.12);
             margin-bottom: 2rem;
         }
         
@@ -262,9 +266,9 @@
         
         /* Total Display */
         .total-display-card {
-            background: linear-gradient(135deg, var(--light-color), white);
-            border: 3px solid var(--primary-color);
-            border-radius: 15px;
+            background: linear-gradient(135deg, rgba(37, 99, 235, 0.08), #fff);
+            border: 2px solid rgba(37, 99, 235, 0.2);
+            border-radius: 18px;
             padding: 1.5rem;
             text-align: center;
         }
@@ -283,9 +287,9 @@
         
         /* Payment Info */
         .payment-info {
-            background: linear-gradient(135deg, #e7f3ff, white);
+            background: linear-gradient(135deg, rgba(14, 165, 233, 0.1), rgba(219, 234, 254, 0.6));
             border-left: 4px solid var(--primary-color);
-            border-radius: 12px;
+            border-radius: 16px;
             padding: 1.5rem;
             margin-bottom: 1.5rem;
         }
@@ -302,8 +306,9 @@
         .bank-details {
             background: white;
             padding: 1.2rem;
-            border-radius: 10px;
+            border-radius: 14px;
             margin-top: 1rem;
+            border: 1px solid rgba(148, 163, 184, 0.3);
         }
         
         .bank-details p {
@@ -326,16 +331,16 @@
             justify-content: center;
             gap: 0.8rem;
             padding: 2.5rem;
-            border: 3px dashed var(--primary-color);
-            border-radius: 15px;
-            background: var(--light-color);
+            border: 2px dashed rgba(37, 99, 235, 0.6);
+            border-radius: 18px;
+            background: rgba(219, 234, 254, 0.6);
             cursor: pointer;
             transition: all 0.3s ease;
         }
         
         .file-upload-label:hover {
-            background: var(--accent-color);
-            border-style: solid;
+            background: rgba(37, 99, 235, 0.1);
+            border-color: var(--primary-color);
             transform: scale(1.02);
         }
         
@@ -415,7 +420,14 @@
         }
         
         /* Responsive */
-        @media (max-width: 768px) {
+        @media (max-width: 991.98px) {
+            .container {
+                max-width: 100%;
+                padding: 0 1rem;
+            }
+        }
+        
+        @media (max-width: 767.98px) {
             .step-label {
                 font-size: 0.75rem;
             }
@@ -423,10 +435,19 @@
             .step-circle {
                 width: 40px;
                 height: 40px;
+                font-size: 0.875rem;
             }
             
             .step-title {
-                font-size: 1.4rem;
+                font-size: clamp(1.25rem, 4vw, 1.5rem);
+            }
+            
+            .form-card {
+                padding: 1.5rem;
+            }
+            
+            .progress-wrapper {
+                padding: 1.5rem;
             }
             
             .form-navigation {
@@ -436,11 +457,52 @@
             .btn-nav {
                 width: 100%;
             }
+            
+            .total-amount {
+                font-size: 1.75rem;
+            }
+            
+            .package-summary {
+                padding: 1.25rem;
+            }
+        }
+        
+        @media (max-width: 575.98px) {
+            .step-label {
+                font-size: 0.6875rem;
+            }
+            
+            .step-circle {
+                width: 36px;
+                height: 36px;
+                font-size: 0.8125rem;
+            }
+            
+            .step-title {
+                font-size: 1.25rem;
+            }
+            
+            .form-card {
+                padding: 1.25rem;
+            }
+            
+            .progress-wrapper {
+                padding: 1.25rem;
+            }
+            
+            .file-upload-label {
+                padding: 2rem 1.5rem;
+            }
+            
+            .file-upload-label i {
+                font-size: 2rem;
+            }
         }
     </style>
 </head>
 <body>
-    <div class="container py-5">
+    <main>
+    <div class="container">
         <!-- Back Button -->
         <div class="mb-4">
             <a href="{{ route('landing.index') }}" class="back-button">
@@ -572,7 +634,7 @@
 
                     <div class="total-display-card">
                         <div class="total-label">Total Pembayaran</div>
-                        <div class="total-amount" id="total_amount">Rp 0</div>
+                        <div class="total-amount" id="total_amount">Rp {{ number_format($package->price * (old('quantity', 1) ?: 1), 0, ',', '.') }}</div>
                     </div>
                 </div>
 
@@ -654,16 +716,16 @@
             </form>
         </div>
     </div>
+    </main>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
     <script>
         let currentStep = 1;
         const totalSteps = 3;
-        const packagePrice = {{ $package->price }};
+        const packagePrice = parseFloat({{ $package->price }});
 
         // Initialize
         showStep(currentStep);
-        updateTotal();
 
         function showStep(step) {
             const stepContents = document.querySelectorAll('.step-content');
@@ -699,6 +761,11 @@
             prevBtn.style.display = step === 1 ? 'none' : 'flex';
             nextBtn.style.display = step === totalSteps ? 'none' : 'flex';
             submitBtn.style.display = step === totalSteps ? 'flex' : 'none';
+
+            // Update total if step 2 is shown
+            if (step === 2) {
+                updateTotal();
+            }
 
             // Scroll to top
             window.scrollTo({ top: 0, behavior: 'smooth' });
@@ -740,16 +807,31 @@
         }
 
         // Calculate total
-        const quantityInput = document.getElementById('quantity');
-        const totalAmountDiv = document.getElementById('total_amount');
-
         function updateTotal() {
-            const quantity = parseInt(quantityInput.value) || 0;
+            const quantityInput = document.getElementById('quantity');
+            const totalAmountDiv = document.getElementById('total_amount');
+            
+            if (!quantityInput || !totalAmountDiv) {
+                return;
+            }
+            
+            const quantity = parseInt(quantityInput.value) || 1;
             const total = quantity * packagePrice;
             totalAmountDiv.textContent = 'Rp ' + total.toLocaleString('id-ID');
         }
 
-        quantityInput.addEventListener('input', updateTotal);
+        // Setup event listener for quantity input (using event delegation)
+        document.addEventListener('input', function(e) {
+            if (e.target && e.target.id === 'quantity') {
+                updateTotal();
+            }
+        });
+        
+        document.addEventListener('change', function(e) {
+            if (e.target && e.target.id === 'quantity') {
+                updateTotal();
+            }
+        });
 
         // File upload feedback
         const fileInput = document.getElementById('payment_proof');

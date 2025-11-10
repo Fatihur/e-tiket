@@ -11,13 +11,14 @@
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <style>
         :root {
-            --primary-color: #00B4D8;
-            --secondary-color: #0077B6;
-            --accent-color: #90E0EF;
-            --dark-color: #023E8A;
-            --light-color: #CAF0F8;
-            --text-dark: #03045E;
-            --text-light: #6c757d;
+            --primary-color: #2563eb;
+            --secondary-color: #0ea5e9;
+            --accent-color: #dbeafe;
+            --dark-color: #0f172a;
+            --light-color: #eff6ff;
+            --text-dark: #0f172a;
+            --text-light: #475569;
+            --success-color: #22c55e;
         }
         
         * {
@@ -29,14 +30,14 @@
         body {
             font-family: 'Poppins', sans-serif;
             color: var(--text-dark);
-            background-color: #f8f9fa;
+            background: radial-gradient(circle at top, rgba(37, 99, 235, 0.1), transparent 55%), #f4f6fb;
         }
         
         /* Navbar */
         .navbar {
-            background: rgba(255, 255, 255, 0.98) !important;
-            backdrop-filter: blur(10px);
-            box-shadow: 0 2px 20px rgba(0, 0, 0, 0.08);
+            background: rgba(255, 255, 255, 0.9) !important;
+            backdrop-filter: blur(12px);
+            box-shadow: 0 15px 35px rgba(15, 23, 42, 0.08);
             padding: 1rem 0;
         }
         
@@ -65,10 +66,16 @@
         
         /* Breadcrumb */
         .breadcrumb-section {
-            background: white;
-            padding: 1.5rem 0;
-            margin-bottom: 2rem;
-            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+            background: rgba(255, 255, 255, 0.95);
+            padding: 1.5rem 2rem;
+            margin: 2.5rem auto;
+            box-shadow: 0 20px 40px rgba(15, 23, 42, 0.08);
+            border-radius: 24px;
+            max-width: 1100px;
+        }
+
+        .breadcrumb-section > .container {
+            padding: 0;
         }
         
         .breadcrumb {
@@ -88,9 +95,9 @@
         /* Package Image */
         .package-image-wrapper {
             position: relative;
-            border-radius: 20px;
+            border-radius: 26px;
             overflow: hidden;
-            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
+            box-shadow: 0 30px 70px rgba(15, 23, 42, 0.18);
             margin-bottom: 2rem;
         }
         
@@ -101,7 +108,7 @@
         }
         
         .image-placeholder {
-            background: linear-gradient(135deg, var(--light-color), var(--accent-color));
+            background: linear-gradient(135deg, rgba(37, 99, 235, 0.3), rgba(14, 165, 233, 0.3));
             height: 500px;
             display: flex;
             align-items: center;
@@ -129,9 +136,9 @@
             gap: 0.5rem;
             margin-bottom: 2rem;
             padding: 1.5rem;
-            background: linear-gradient(135deg, var(--light-color), white);
-            border-radius: 15px;
-            border-left: 4px solid var(--primary-color);
+            background: linear-gradient(135deg, rgba(37, 99, 235, 0.08), #fff);
+            border-radius: 18px;
+            border-left: 4px solid rgba(37, 99, 235, 0.3);
         }
         
         .price-amount {
@@ -149,17 +156,17 @@
         /* Info Cards */
         .info-card {
             background: white;
-            border-radius: 15px;
+            border-radius: 20px;
             padding: 2rem;
             margin-bottom: 1.5rem;
-            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
-            border: none;
+            box-shadow: 0 25px 55px rgba(15, 23, 42, 0.08);
+            border: 1px solid rgba(148, 163, 184, 0.2);
             transition: transform 0.3s ease, box-shadow 0.3s ease;
         }
-        
+
         .info-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 10px 30px rgba(0, 180, 216, 0.15);
+            transform: translateY(-4px);
+            box-shadow: 0 30px 70px rgba(37, 99, 235, 0.15);
         }
         
         .info-card-title {
@@ -205,7 +212,7 @@
         
         .facilities-list i {
             font-size: 1.2rem;
-            color: #28a745;
+            color: var(--success-color, #22c55e);
             flex-shrink: 0;
         }
         
@@ -218,9 +225,9 @@
         
         .info-item {
             padding: 1.5rem;
-            background: linear-gradient(135deg, #f8f9fa, white);
-            border-radius: 12px;
-            /* border-left: 3px solid var(--accent-color); */
+            background: linear-gradient(135deg, rgba(219, 234, 254, 0.6), #fff);
+            border-radius: 16px;
+            border: 1px solid rgba(148, 163, 184, 0.2);
         }
         
         .info-item strong {
@@ -245,38 +252,44 @@
         }
         
         .status-badge.active {
-            background: linear-gradient(135deg, #28a745, #20c997);
+            background: linear-gradient(135deg, #22c55e, #10b981);
             color: white;
         }
-        
+
         .status-badge.inactive {
-            background: #6c757d;
+            background: #94a3b8;
             color: white;
         }
         
         /* Booking Card */
         .booking-card {
-            background: white;
-            border-radius: 20px;
-            padding: 2rem;
-            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
+            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+            color: #fff;
+            border-radius: 24px;
+            padding: 2.5rem;
+            box-shadow: 0 35px 70px rgba(37, 99, 235, 0.35);
             position: sticky;
             top: 100px;
+        }
+
+        .booking-card p,
+        .booking-card small {
+            color: rgba(255, 255, 255, 0.9);
         }
         
         .booking-card-title {
             font-size: 1.5rem;
             font-weight: 700;
-            color: var(--text-dark);
             margin-bottom: 1.5rem;
             text-align: center;
         }
         
         .price-summary {
-            background: linear-gradient(135deg, var(--light-color), white);
+            background: rgba(255, 255, 255, 0.15);
             padding: 1.5rem;
-            border-radius: 12px;
+            border-radius: 18px;
             margin-bottom: 1.5rem;
+            border: 1px solid rgba(255, 255, 255, 0.25);
         }
         
         .price-row {
@@ -287,13 +300,13 @@
         }
         
         .price-row span:first-child {
-            color: var(--text-light);
+            color: rgba(255, 255, 255, 0.75);
             font-size: 0.95rem;
         }
-        
+
         .price-row strong {
             font-size: 1.3rem;
-            color: var(--primary-color);
+            color: #fff;
             font-weight: 700;
         }
         
@@ -302,24 +315,24 @@
             padding: 1rem;
             font-size: 1.1rem;
             font-weight: 600;
-            border-radius: 12px;
+            border-radius: 16px;
             border: none;
-            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
-            color: white;
+            background: #fff;
+            color: var(--primary-color);
             transition: all 0.3s ease;
             display: flex;
             align-items: center;
             justify-content: center;
             gap: 0.5rem;
         }
-        
+
         .btn-booking:hover {
             transform: translateY(-2px);
-            box-shadow: 0 10px 25px rgba(0, 180, 216, 0.3);
+            box-shadow: 0 15px 35px rgba(15, 23, 42, 0.2);
         }
-        
+
         .btn-booking:disabled {
-            background: #6c757d;
+            background: rgba(148, 163, 184, 0.4);
             cursor: not-allowed;
         }
         
@@ -329,20 +342,16 @@
         }
         
         .booking-info {
-            background: #e7f3ff;
-            border-left: 4px solid var(--primary-color);
+            background: rgba(255, 255, 255, 0.15);
+            border-left: 4px solid rgba(255, 255, 255, 0.6);
             padding: 1rem;
-            border-radius: 8px;
+            border-radius: 16px;
             margin-top: 1.5rem;
+            color: rgba(255, 255, 255, 0.9);
         }
-        
+
         .booking-info i {
-            color: var(--primary-color);
-        }
-        
-        .booking-info small {
-            color: var(--text-dark);
-            line-height: 1.6;
+            color: #fff;
         }
         
         /* Footer */
@@ -358,27 +367,62 @@
         }
         
         /* Responsive */
-        @media (max-width: 768px) {
+        @media (max-width: 991.98px) {
+            .booking-card {
+                position: relative;
+                top: 0;
+                margin-top: 2rem;
+            }
+        }
+        
+        @media (max-width: 767.98px) {
             .package-title {
-                font-size: 1.8rem;
+                font-size: clamp(1.5rem, 4vw, 2rem);
             }
             
             .price-amount {
-                font-size: 2rem;
+                font-size: 1.75rem;
             }
             
             .package-image-wrapper img,
             .image-placeholder {
-                height: 300px;
+                height: 280px;
             }
             
             .info-grid {
                 grid-template-columns: 1fr;
+                gap: 1rem;
+            }
+            
+            .info-card {
+                padding: 1.5rem;
             }
             
             .booking-card {
-                position: relative;
-                top: 0;
+                padding: 1.5rem;
+            }
+            
+            .breadcrumb-section {
+                padding: 1rem 0;
+            }
+        }
+        
+        @media (max-width: 575.98px) {
+            .package-title {
+                font-size: 1.5rem;
+            }
+            
+            .price-section {
+                padding: 1rem;
+            }
+            
+            .price-amount {
+                font-size: 1.5rem;
+            }
+            
+            .package-image-wrapper img,
+            .image-placeholder {
+                height: 240px;
             }
         }
     </style>
