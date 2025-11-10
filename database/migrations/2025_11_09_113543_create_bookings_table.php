@@ -1,0 +1,40 @@
+<?php
+
+use Illuminate\Database\Migrations\Migration;
+use Illuminate\Database\Schema\Blueprint;
+use Illuminate\Support\Facades\Schema;
+
+return new class extends Migration
+{
+    /**
+     * Run the migrations.
+     */
+    public function up(): void
+    {
+        Schema::create('bookings', function (Blueprint $table) {
+            $table->id();
+            $table->string('booking_code')->unique();
+            $table->foreignId('wisata_package_id')->constrained()->onDelete('cascade');
+            $table->string('visitor_name');
+            $table->string('visitor_email');
+            $table->string('visitor_phone');
+            $table->date('visit_date');
+            $table->integer('quantity');
+            $table->decimal('total_amount', 10, 2);
+            $table->string('payment_proof')->nullable();
+            $table->enum('status', ['pending', 'confirmed', 'rejected', 'expired'])->default('pending');
+            $table->foreignId('validated_by')->nullable()->constrained('users')->onDelete('set null');
+            $table->timestamp('validated_at')->nullable();
+            $table->text('notes')->nullable();
+            $table->timestamps();
+        });
+    }
+
+    /**
+     * Reverse the migrations.
+     */
+    public function down(): void
+    {
+        Schema::dropIfExists('bookings');
+    }
+};
